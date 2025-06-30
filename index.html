@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, user-scalable=no"
+  />
+  <title>Bako ©</title>
+
+  <link rel="icon" href="Assets/Logo.png" type="image/png" />
+  <link rel="stylesheet" href="style.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+  />
+  <body>
+    <div class="top-line"></div>
+    <header>
+      <nav>
+        <div class="logo">
+          <img src="Assets/logo.PNG" alt="Bako Logo" />
+        </div>
+        <ul>
+          <li><a href="#">HOME</a></li>
+          <li><a href="#">ABOUT</a></li>
+          <li><a href="#">SERVICES</a></li>
+          <li><a href="#">PROJECTS</a></li>
+        </ul>
+        <div class="header-right">
+          <i class="fas fa-search"></i>
+          <div class="lang-switch-wrapper">
+            <button class="lang-switch">
+              <i class="fas fa-globe"></i>
+              <span class="lang-label"></span>
+              <i class="fas fa-caret-down"></i>
+            </button>
+            <ul class="lang-dropdown">
+              <li data-lang="en"><span>English</span></li>
+              <li data-lang="ar"><span>العربية</span></li>
+              <li data-lang="ko"><span>한국어</span></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="main-content">
+        <div class="image-grid">
+          <div class="image-container">
+            <a href="products-automotive.html">
+              <img src="Assets/main1.jpg" alt="Main 1" class="main1" />
+              <div class="image-title center-title">
+                <h2 id="main1-title">Automotive Lubricants</h2>
+              </div>
+            </a>
+            <a
+              href="products-automotive.html"
+              class="learn-more-btn overlay-btn"
+            >
+              Learn More <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+          <div class="divider"></div>
+          <div class="image-container">
+            <a href="products-industrial.html">
+              <img src="Assets/main2.jpg" alt="Main 2" class="main2" />
+              <div class="image-title center-title">
+                <h2 id="main2-title">Industrial Lubricants</h2>
+              </div>
+            </a>
+            <a
+              href="products-industrial.html"
+              class="learn-more-btn overlay-btn"
+            >
+              Learn More <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+        <div class="award-section">
+          <img src="Assets/Award.png" alt="Award" />
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img src="Assets/logo.PNG" alt="Bako Logo" />
+          <div class="footer-links">
+            <a href="#" class="footer-link-btn">Terms</a>
+            <a href="#" class="footer-link-btn" id="about-us-btn">About Us</a>
+            <a href="#" class="footer-link-btn">Notice</a>
+            <a href="contact.html" class="footer-contact-btn footer-inline"
+              >Contact Us</a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-social">
+          <a
+            href="https://www.facebook.com/share/19iTDnywU5"
+            class="social-icon"
+            title="Facebook"
+          >
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a
+            href="https://t.me/bakocompany"
+            class="social-icon"
+            title="Telegram"
+          >
+            <i class="fab fa-telegram-plane"></i>
+          </a>
+          <a
+            href="https://wa.me/963959292808"
+            class="social-icon"
+            title="WhatsApp"
+          >
+            <i class="fab fa-whatsapp"></i>
+          </a>
+          <a
+            href="https://www.instagram.com/bako_company1"
+            class="social-icon"
+            title="Instagram"
+          >
+            <i class="fab fa-instagram"></i>
+          </a>
+        </div>
+        <p>&copy; 2025 Bako. All Rights Reserved.</p>
+      </div>
+    </footer>
+
+    <!-- About Us Modal -->
+    <div id="about-us-modal" class="modal-overlay" style="display: none">
+      <div class="modal-content">
+        <span class="close-modal" id="close-about-modal">&times;</span>
+        <h2>About Bako</h2>
+        <p>
+          Bako is a trusted and certified company specializing in high-quality
+          mineral oils and lubricants. We are committed to providing reliable,
+          premium products for automotive and industrial applications. Our oils
+          are manufactured to the highest international standards, ensuring
+          performance, protection, and longevity for your machinery and
+          vehicles.<br /><br />
+          With years of experience and a reputation for excellence, Bako stands
+          as a symbol of quality and trust in the lubricants industry. Our
+          mission is to deliver innovative solutions and outstanding customer
+          service to our partners and clients worldwide.
+        </p>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
