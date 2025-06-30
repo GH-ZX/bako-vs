@@ -629,5 +629,172 @@ footer {
   line-height: 1.7;
 }
 
+/* Bako Best Brand Section */
+.bako-best-section {
+  width: 100vw;
+  min-height: 260px;
+  height: 320px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  background: url("Assets/back-best.png") center center/cover no-repeat;
+  position: relative;
+  box-sizing: border-box;
+}
+.bako-best-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 100vw;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.55) 60%, rgba(0,0,0,0.35) 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+.bako-best-box.custom-best-box {
+  background: transparent !important;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  min-width: 0;
+  max-width: 100vw;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+}
+.bako-best-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  max-width: 1200px;
+  gap: 48px;
+  padding: 0 5vw;
+}
+.bako-best-title-area {
+  flex: 1 1 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+.bako-best-title {
+  color: #fff;
+  font-size: 2.8rem;
+  font-weight: bold;
+  margin: 0 0 18px 0;
+  letter-spacing: 1.5px;
+  text-shadow: 0 4px 18px #000a, 0 1px 2px #0008;
+}
+.bako-best-divider {
+  width: 60px;
+  height: 5px;
+  background: linear-gradient(90deg, #ff9800 0%, #ffd700 100%);
+  border-radius: 3px;
+  margin: 0 0 0 0;
+}
+.bako-best-desc-area {
+  flex: 2 1 60%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+.bako-best-desc {
+  color: #fff;
+  font-size: 1.18rem;
+  font-weight: 500;
+  text-align: left;
+  line-height: 1.7;
+  text-shadow: 0 2px 8px #000a, 0 1px 2px #0008;
+  max-width: 520px;
+}
+
+.bako-best-brand-desc {
+  display: block;
+  margin-top: 6px;
+  color: #fff;
+  font-size: 1.08rem;
+  font-weight: 400;
+}
+.bako-best-title-row {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+.bako-best-title-img {
+  height: 200px;
+  object-fit: contain;
+  border-radius: 10px;
+
+  box-shadow: 0 2px 8px rgba(255, 152, 0, 0.13);
+}
+@media (max-width: 700px) {
+  .bako-best-section {
+    min-height: 180px;
+    height: 220px;
+  }
+  .bako-best-box {
+    min-width: 180px;
+    max-width: 95vw;
+    padding: 18px 8vw;
+  }
+  .bako-best-image {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 10px;
+  }
+  .bako-best-text {
+    font-size: 1.05rem;
+  }
+}
+@media (max-width: 900px) {
+  .bako-best-content {
+    flex-direction: column;
+    gap: 18px;
+    padding: 0 2vw;
+  }
+  .bako-best-title-area,
+  .bako-best-desc-area {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+  }
+  .bako-best-desc {
+    text-align: left;
+    max-width: 95vw;
+  }
+}
+@media (max-width: 600px) {
+  .bako-best-section {
+    min-height: 160px;
+    height: 200px;
+  }
+  .bako-best-title {
+    font-size: 1.3rem;
+  }
+  .bako-best-desc {
+    font-size: 0.95rem;
+  }
+  .bako-best-divider {
+    width: 36px;
+    height: 3px;
+  }
+  .bako-best-title-img {
+    width: 36px;
+    height: 36px;
+    margin-right: 4px;
+  }
+  .bako-best-title-row {
+    gap: 8px;
+  }
+}
+
 /* =================== RESPONSIVE MEDIA QUERIES =================== */
 /* Responsive Adjustments for style.css */

@@ -197,6 +197,29 @@ document.addEventListener("DOMContentLoaded", () => {
   // تحديث نص About Us عند تحميل الصفحة
   updateAboutUsModal("en");
 
+  // Bako Best Brand translation
+  function updateBakoBest(lang) {
+    var bakoBestText = document.getElementById("bako-best-text");
+    if (bakoBestText && labels[lang] && labels[lang].bakoBest) {
+      bakoBestText.textContent = labels[lang].bakoBest;
+    }
+  }
+
+  // Update Bako Best Brand text on language change
+  if (langDropdown) {
+    langDropdown.querySelectorAll("li").forEach((li) => {
+      li.addEventListener("click", (e) => {
+        const selected = li.getAttribute("data-lang");
+        let lang = "en";
+        if (selected === "ar") lang = "ar";
+        else if (selected === "ko") lang = "ko";
+        updateBakoBest(lang);
+      });
+    });
+  }
+  // Initial call for default language
+  updateBakoBest("en");
+
   // Responsive nav toggle for mobile
   const nav = document.querySelector("header nav");
   const logo = document.querySelector(".logo");
