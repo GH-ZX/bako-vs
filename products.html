@@ -3,12 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bako ©</title>
+    <title>Our Products | Bako</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="responsive.css" />
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
     />
   </head>
   <body>
@@ -56,20 +56,22 @@
       </nav>
     </header>
     <main>
-      <section class="contact-section">
-        <h1>Contact Us</h1>
-        <form class="contact-form" id="contactForm">
-          <label for="message">Message</label>
-          <textarea id="message" name="message" rows="5" required></textarea>
-
-          <button type="submit">Send Message</button>
-        </form>
+      <section class="main-content">
+        <h1 style="color: #ff4500">Our Products</h1>
+        <p>
+          Explore our range of high-quality lubricants for both automotive and
+          industrial applications.
+        </p>
+        <h2 style="margin-top: 32px; color: #333">Automotive Lubricants</h2>
+        <div id="automotive-products" class="product-list"></div>
+        <h2 style="margin-top: 48px; color: #333">Industrial Lubricants</h2>
+        <div id="industrial-products" class="product-list"></div>
       </section>
     </main>
     <footer>
       <div class="footer-content">
         <div class="footer-logo">
-          <img src="Assets/logo.PNG" alt="Bako Logo" />
+          <a href="index.html"><img src="Assets/logo.PNG" alt="Bako Logo" /></a>
           <div class="footer-links">
             <a href="#" class="footer-link-btn">Terms</a>
             <a href="#" class="footer-link-btn">About Us</a>
@@ -84,18 +86,6 @@
         <p>&copy; 2025 Bako. All Rights Reserved.</p>
       </div>
     </footer>
-    <script>
-      document
-        .getElementById("contactForm")
-        .addEventListener("submit", function (e) {
-          e.preventDefault();
-          var message = document.getElementById("message").value;
-          var mailto = `mailto:Abd.bako.company@gmail.com?subject=Contact&body=${encodeURIComponent(
-            message
-          )}`;
-          window.location.href = mailto;
-        });
-    </script>
+    <script src="script.js"></script>
   </body>
-  <script src="script.js"></script>
 </html>

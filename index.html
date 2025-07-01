@@ -3,31 +3,31 @@
   <meta charset="UTF-8" />
   <meta
     name="viewport"
-    content="width=device-width, initial-scale=1.0, user-scalable=no"
+    content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0"
   />
   <title>Bako ©</title>
 
   <link rel="icon" href="Assets/Logo.png" type="image/png" />
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="responsive.css" />
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
   />
   <body>
-    <div class="top-line"></div>
-    <header>
+    <header class="fade-in">
+      <div class="dual-color-top-line"></div>
       <nav>
-        <div class="logo">
-          <img src="Assets/logo.PNG" alt="Bako Logo" />
-        </div>
-        <ul>
-          <li><a href="#">HOME</a></li>
-          <li><a href="#">ABOUT</a></li>
-          <li><a href="#">SERVICES</a></li>
-          <li><a href="#">PROJECTS</a></li>
-        </ul>
-        <div class="header-right">
-          <i class="fas fa-search"></i>
+        
+        <button class="hamburger" aria-label="Open menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <div class="nav-actions">
+          <button class="search-btn" aria-label="Search">
+            <i class="fas fa-search"></i>
+          </button>
           <div class="lang-switch-wrapper">
             <button class="lang-switch">
               <i class="fas fa-globe"></i>
@@ -40,60 +40,87 @@
             </ul>
           </div>
         </div>
+        <div
+          class="logo fade-in"
+          style="order: -1; margin-right: auto; margin-left: 0"
+        >
+          <a href="index.html">
+            <img src="Assets/logo.PNG" alt="Bako Logo" class="fade-in" />
+          </a>
+        </div>
+        <ul class="fade-in">
+          <li><a href="#">HOME</a></li>
+          <li><a href="#">ABOUT</a></li>
+          <li><a href="#">SERVICES</a></li>
+          <li><a href="#">PROJECTS</a></li>
+        </ul>
+        <div class="header-right fade-in">
+          <!-- تبقى فارغة أو لعناصر أخرى فقط -->
+        </div>
       </nav>
     </header>
 
     <main>
-      <section class="main-content">
+      <section class="main-content fade-in">
         <div class="image-grid">
-          <div class="image-container">
-            <a href="products-automotive.html">
-              <img src="Assets/main1.jpg" alt="Main 1" class="main1" />
-              <div class="image-title center-title">
+          <div class="image-container fade-in">
+            <a href="products.html">
+              <img
+                src="Assets/Home/main1.jpg"
+                alt="Main 1"
+                class="main1 fade-in"
+              />
+              <div class="image-title center-title fade-in">
                 <h2 id="main1-title">Automotive Lubricants</h2>
               </div>
             </a>
             <a
-              href="products-automotive.html"
-              class="learn-more-btn overlay-btn"
+              href="products.html"
+              class="learn-more-btn overlay-btn fade-in"
             >
               Learn More <i class="fas fa-arrow-right"></i>
             </a>
           </div>
-          <div class="divider"></div>
-          <div class="image-container">
-            <a href="products-industrial.html">
-              <img src="Assets/main2.jpg" alt="Main 2" class="main2" />
-              <div class="image-title center-title">
+          <div class="divider fade-in"></div>
+          <div class="image-container fade-in">
+            <a href="products.html">
+              <img
+                src="Assets/Home/main2.jpg"
+                alt="Main 2"
+                class="main2 fade-in"
+              />
+              <div class="image-title center-title fade-in">
                 <h2 id="main2-title">Industrial Lubricants</h2>
               </div>
             </a>
             <a
-              href="products-industrial.html"
-              class="learn-more-btn overlay-btn"
+              href="products.html"
+              class="learn-more-btn overlay-btn fade-in"
             >
               Learn More <i class="fas fa-arrow-right"></i>
             </a>
           </div>
         </div>
       </section>
-      <div class="bako-best-section">
-        <div class="bako-best-box custom-best-box">
-          <div class="bako-best-content">
-            <div class="bako-best-title-area">
-              <div class="bako-best-title-row">
+      <div class="bako-best-section fade-in">
+        <div class="bako-best-box custom-best-box fade-in">
+          <div class="bako-best-content fade-in">
+            <div class="bako-best-title-area fade-in">
+              <div class="bako-best-title-row fade-in">
                 <img
-                  src="Assets/Award.png"
+                  src="Assets/Home/Award.png"
                   alt="Award"
-                  class="bako-best-title-img"
+                  class="bako-best-title-img fade-in"
                 />
-                <h1 class="bako-best-title">WorldWide No.1* Mineral Oil</h1>
+                <h1 class="bako-best-title fade-in">
+                  WorldWide No.1* Mineral Oil
+                </h1>
               </div>
-              <div class="bako-best-divider"></div>
+              <div class="bako-best-divider fade-in"></div>
             </div>
-            <div class="bako-best-desc-area">
-              <div class="bako-best-desc">
-                <span class="bako-best-brand-desc">
+            <div class="bako-best-desc-area fade-in">
+              <div class="bako-best-desc fade-in">
+                <span class="bako-best-brand-desc fade-in">
                   Bako the lubricant brand of<br />
                   world-class petrochemical company GS Caltex,<br />
                   is trusted by customers worldwide.
@@ -110,31 +137,39 @@
       </div>
     </main>
 
-    <footer>
-      <div class="footer-content">
-        <div class="footer-logo">
-          <img src="Assets/logo.PNG" alt="Bako Logo" />
-          <div class="footer-links">
-            <a href="#" class="footer-link-btn">Terms</a>
-            <a href="#" class="footer-link-btn" id="about-us-btn">About Us</a>
-            <a href="#" class="footer-link-btn">Notice</a>
-            <a href="contact.html" class="footer-contact-btn footer-inline"
+    <footer class="fade-in">
+      <div class="footer-content fade-in">
+        <div class="footer-logo fade-in">
+          <img src="Assets/logo.PNG" alt="Bako Logo" class="fade-in" />
+          <div class="footer-links fade-in">
+            <a href="#" class="footer-link-btn fade-in">Terms</a>
+            <a href="#" class="footer-link-btn fade-in" id="about-us-btn"
+              >About Us</a
+            >
+            <a href="#" class="footer-link-btn fade-in">Notice</a>
+            <a
+              href="contact.html"
+              class="footer-contact-btn footer-inline fade-in"
               >Contact Us</a
             >
           </div>
         </div>
       </div>
-      <div class="footer-bottom">
+      <div class="footer-bottom fade-in">
         <p>&copy; 2025 Bako. All Rights Reserved.</p>
       </div>
     </footer>
 
     <!-- About Us Modal -->
-    <div id="about-us-modal" class="modal-overlay" style="display: none">
-      <div class="modal-content">
-        <span class="close-modal" id="close-about-modal">&times;</span>
-        <h2>About Bako</h2>
-        <p>
+    <div
+      id="about-us-modal"
+      class="modal-overlay fade-in"
+      style="display: none"
+    >
+      <div class="modal-content fade-in">
+        <span class="close-modal fade-in" id="close-about-modal">&times;</span>
+        <h2 class="fade-in">About Bako</h2>
+        <p class="fade-in">
           Bako is a trusted and certified company specializing in high-quality
           mineral oils and lubricants. We are committed to providing reliable,
           premium products for automotive and industrial applications. Our oils

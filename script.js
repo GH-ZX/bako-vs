@@ -1,4 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // Fade-in effect for all elements at once
+  document.querySelectorAll(".fade-in").forEach((el) => {
+    el.classList.add("visible");
+  });
+
   // Slider code (if present)
   const slides = document.querySelectorAll(".slide");
   const prevBtn = document.querySelector(".prev-btn");
@@ -33,6 +38,16 @@ document.addEventListener("DOMContentLoaded", () => {
   const langBtn = document.querySelector(".lang-switch");
   const navLinks = document.querySelectorAll("nav ul li a");
   const quoteBtn = document.querySelector(".quote-btn");
+
+  // زر الهمبرغر
+  const hamburger = document.querySelector(".hamburger");
+  const nav = document.querySelector("nav");
+  if (hamburger && nav) {
+    hamburger.addEventListener("click", () => {
+      nav.classList.toggle("open");
+    });
+  }
+
   const learnMoreBtns = document.querySelectorAll(".learn-more-btn");
   const contactTitle = document.querySelector(".footer-contact h3");
   const contactEmail = document.querySelector(".footer-contact p:nth-child(2)");
@@ -50,29 +65,6 @@ document.addEventListener("DOMContentLoaded", () => {
       // Initial call for default language
       updateFooter("en");
     });
-
-  // Remove direct toggle on langBtn
-  // if (langBtn) {
-  //   langBtn.addEventListener("click", () => {
-  //     isArabic = !isArabic;
-  //     const lang = isArabic ? "ar" : "en";
-  //     // Nav
-  //     navLinks.forEach((a, i) => (a.textContent = labels[lang].nav[i]));
-  //     // Quote
-  //     if (quoteBtn) quoteBtn.textContent = labels[lang].quote;
-  //     // Learn More
-  //     learnMoreBtns.forEach((btn) => {
-  //       btn.childNodes[0].nodeValue = labels[lang].learn + " ";
-  //     });
-  //     // Footer
-  //     if (contactTitle) contactTitle.textContent = labels[lang].contact;
-  //     if (contactEmail) contactEmail.textContent = labels[lang].email;
-  //     if (contactPhone) contactPhone.textContent = labels[lang].phone;
-  //     // Lang btn
-  //     langBtn.textContent = labels[lang].lang;
-  //     // No direction or alignment change
-  //   });
-  // }
 
   // Dropdown toggle
   if (langSwitchWrapper && langDropdown) {
@@ -215,29 +207,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // Initial call for default language
   updateBakoBest("en");
 
-  // Responsive nav toggle for mobile
-  const nav = document.querySelector("header nav");
-  const logo = document.querySelector(".logo");
-  if (nav && logo) {
-    logo.addEventListener("click", function (e) {
-      // Only on mobile
-      if (window.innerWidth <= 600) {
-        nav.classList.toggle("open");
-      }
-    });
-    // Close nav when clicking outside (mobile only)
-    document.addEventListener("click", function (e) {
-      if (
-        window.innerWidth <= 600 &&
-        nav.classList.contains("open") &&
-        !nav.contains(e.target) &&
-        !logo.contains(e.target)
-      ) {
-        nav.classList.remove("open");
-      }
-    });
-  }
-
   // Mobile language modal
   function showLangModal() {
     // Remove if already exists
@@ -256,6 +225,8 @@ document.addEventListener("DOMContentLoaded", () => {
     modal.style.alignItems = "center";
     modal.style.justifyContent = "center";
     modal.style.zIndex = "99999";
+    modal.style.opacity = "0";
+    modal.style.transition = "opacity 0.35s cubic-bezier(.4,1.6,.4,1)";
     // Modal content
     const content = document.createElement("div");
     content.style.background = "#fff";
@@ -265,6 +236,9 @@ document.addEventListener("DOMContentLoaded", () => {
     content.style.textAlign = "center";
     content.style.minWidth = "220px";
     content.style.maxWidth = "90vw";
+    content.style.transform = "translateY(40px) scale(0.98)";
+    content.style.opacity = "0";
+    content.style.transition = "all 0.35s cubic-bezier(.4,1.6,.4,1)";
     // Title
     const title = document.createElement("h3");
     title.textContent = "Select Language";
@@ -321,9 +295,23 @@ document.addEventListener("DOMContentLoaded", () => {
     content.style.position = "relative";
     modal.appendChild(content);
     document.body.appendChild(modal);
+    // Animation in
+    setTimeout(() => {
+      modal.style.opacity = "1";
+      content.style.transform = "translateY(0) scale(1)";
+      content.style.opacity = "1";
+    }, 10);
     // Close on outside click
     modal.addEventListener("click", (e) => {
-      if (e.target === modal) document.body.removeChild(modal);
+      if (e.target === modal) {
+        // Animation out
+        modal.style.opacity = "0";
+        content.style.transform = "translateY(40px) scale(0.98)";
+        content.style.opacity = "0";
+        setTimeout(() => {
+          if (document.body.contains(modal)) document.body.removeChild(modal);
+        }, 350);
+      }
     });
   }
   // Hijack lang-switch for mobile
@@ -335,5 +323,34 @@ document.addEventListener("DOMContentLoaded", () => {
         showLangModal();
       }
     });
+  }
+
+  // Dynamic product cards rendering
+  if (window.location.pathname.includes("products.html")) {
+    fetch("products.json")
+      .then((res) => res.json())
+      .then((products) => {
+        const automotive = document.getElementById("automotive-products");
+        const industrial = document.getElementById("industrial-products");
+        products.forEach((product) => {
+          const card = document.createElement("div");
+          card.className = "product-card better-card";
+          card.innerHTML = `
+            <img src="${product.image}" alt="${
+            product.name
+          }" class="product-img" />
+            <div class="product-info">
+              <h3>${product.name}</h3>
+              <p>${product.description}</p>
+              <div class="product-price">$${product.price.toFixed(2)}</div>
+            </div>
+          `;
+          if (product.category === "Automotive") {
+            automotive.appendChild(card);
+          } else if (product.category === "Industrial") {
+            industrial.appendChild(card);
+          }
+        });
+      });
   }
 });
