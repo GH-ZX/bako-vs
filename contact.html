@@ -30,7 +30,7 @@
     <main>
       <section class="contact-section">
         <h1>Contact Us</h1>
-        <form class="contact-form">
+        <form class="contact-form" id="contactForm">
           <label for="name">Name</label>
           <input type="text" id="name" name="name" required />
 
@@ -59,38 +59,26 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <div class="footer-social">
-          <a
-            href="https://www.facebook.com/share/19iTDnywU5"
-            class="social-icon"
-            title="Facebook"
-          >
-            <i class="fab fa-facebook-f"></i>
-          </a>
-          <a
-            href="https://t.me/bakocompany"
-            class="social-icon"
-            title="Telegram"
-          >
-            <i class="fab fa-telegram-plane"></i>
-          </a>
-          <a
-            href="https://wa.me/963959292808"
-            class="social-icon"
-            title="WhatsApp"
-          >
-            <i class="fab fa-whatsapp"></i>
-          </a>
-          <a
-            href="https://www.instagram.com/bako_company1"
-            class="social-icon"
-            title="Instagram"
-          >
-            <i class="fab fa-instagram"></i>
-          </a>
-        </div>
         <p>&copy; 2025 Bako. All Rights Reserved.</p>
       </div>
     </footer>
+    <script>
+      document
+        .getElementById("contactForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          var name = document.getElementById("name").value;
+          var email = document.getElementById("email").value;
+          var message = document.getElementById("message").value;
+          var mailto = `mailto:?subject=Contact from ${encodeURIComponent(
+            name
+          )}&body=Name: ${encodeURIComponent(
+            name
+          )}%0AEmail: ${encodeURIComponent(
+            email
+          )}%0AMessage: ${encodeURIComponent(message)}`;
+          window.location.href = mailto;
+        });
+    </script>
   </body>
 </html>

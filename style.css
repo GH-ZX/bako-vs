@@ -419,52 +419,6 @@ footer {
   padding-top: 6px;
 }
 
-.footer-social {
-  margin-bottom: 4px;
-}
-
-.social-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 100px;
-  height: 100px;
-  margin: 0 6px;
-  border-radius: 50%;
-  background: #222;
-  color: #fff;
-  font-size: 44px;
-  transition: background 0.2s, color 0.2s, transform 0.2s;
-  text-decoration: none;
-}
-
-.social-icon:hover {
-  /* default fallback, will be overridden below */
-  background: #ff4500;
-  color: #fff;
-  transform: scale(1.12);
-}
-
-.social-icon[title="Facebook"]:hover {
-  background: #1877f3;
-}
-.social-icon[title="Telegram"]:hover {
-  background: #29b6f6;
-}
-.social-icon[title="WhatsApp"]:hover {
-  background: #25d366;
-}
-.social-icon[title="Instagram"]:hover {
-  background: radial-gradient(
-    circle at 30% 110%,
-    #fdf497 0%,
-    #fdf497 5%,
-    #fd5949 45%,
-    #d6249f 60%,
-    #285aeb 90%
-  );
-}
-
 /* Divider */
 .divider {
   width: 2px;
@@ -649,7 +603,12 @@ footer {
   inset: 0;
   width: 100vw;
   height: 100%;
-  background: linear-gradient(90deg, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.55) 60%, rgba(0,0,0,0.35) 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.72) 0%,
+    rgba(0, 0, 0, 0.55) 60%,
+    rgba(0, 0, 0, 0.35) 100%
+  );
   z-index: 1;
   pointer-events: none;
 }

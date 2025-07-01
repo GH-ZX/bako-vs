@@ -87,9 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
       li.addEventListener("click", (e) => {
         const selected = li.getAttribute("data-lang");
         let lang = "en";
-        if (selected === "ar") lang = "ar";
-        else if (selected === "ko") lang = "ko";
-        isArabic = lang === "ar";
+        if (selected === "ko") lang = "ko";
         // Nav
         navLinks.forEach((a, i) => (a.textContent = labels[lang].nav[i]));
         // Quote
@@ -140,8 +138,7 @@ document.addEventListener("DOMContentLoaded", () => {
       li.addEventListener("click", (e) => {
         const selected = li.getAttribute("data-lang");
         let lang = "en";
-        if (selected === "ar") lang = "ar";
-        else if (selected === "ko") lang = "ko";
+        if (selected === "ko") lang = "ko";
         updateFooter(lang);
       });
     });
@@ -188,8 +185,7 @@ document.addEventListener("DOMContentLoaded", () => {
       li.addEventListener("click", (e) => {
         const selected = li.getAttribute("data-lang");
         let lang = "en";
-        if (selected === "ar") lang = "ar";
-        else if (selected === "ko") lang = "ko";
+        if (selected === "ko") lang = "ko";
         updateAboutUsModal(lang);
       });
     });
@@ -211,8 +207,7 @@ document.addEventListener("DOMContentLoaded", () => {
       li.addEventListener("click", (e) => {
         const selected = li.getAttribute("data-lang");
         let lang = "en";
-        if (selected === "ar") lang = "ar";
-        else if (selected === "ko") lang = "ko";
+        if (selected === "ko") lang = "ko";
         updateBakoBest(lang);
       });
     });
